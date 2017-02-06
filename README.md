@@ -37,17 +37,17 @@ JFastText jft = new JFastText();
 
 ### Text classification
 ```java
-# Train supervised model
+// Train supervised model
 jft.runCmd(new String[] {
         "supervised",
         "-input", "src/test/resources/data/labeled_data.txt",
         "-output", "src/test/resources/models/supervised.model"
 });
 
-# Load model from file
+// Load model from file
 jft.loadModel("src/test/resources/models/supervised.model.bin");
 
-# Do label prediction
+// Do label prediction
 String text = "What is the most popular game in the US ?";
 JFastText.ProbLabel predictedProbLabel = jft.predictProba(text);
 System.out.printf("\nThe label of '%s' is '%s' with probability %f\n",
